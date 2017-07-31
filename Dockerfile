@@ -4,8 +4,7 @@ MAINTAINER Aissam BENNANI
 # add some OS tools 
 RUN apt-get update && \
 	apt-get install -y unzip wget curl && \
-	apt-get clean && \
-	apt-get vim && \
+	apt-get clean && \	
 	rm -rf /var/lib/apt/lists/*
 # set the timezone to London 
 RUN echo Europe/London > /etc/timezone && \
