@@ -1,7 +1,5 @@
 zookaf1:
-  image: test/mykafka
-  container_name: mykafka
-  #dockerfile: Dockerfile
+  image: c82aben/mykafka  
   # internal docker container hostname
   hostname:   zoo1
 # host names of the other docker containers in the cluster and the ip of the box they run on.   
@@ -15,6 +13,7 @@ zookaf1:
     - "2888:2888"
 # port used by zookeeper to maintain the ensemble (cluster)     
     - "3888:3888"
+  dns: 10.153.224.13
   environment: 
   # ID of the node in the cluster (idealy 1 to ... however many nodes you have )
     NODE_ID: 1

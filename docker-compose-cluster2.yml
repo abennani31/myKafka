@@ -1,6 +1,5 @@
 zookaf2:
-  build: .
-  # internal docker container hostname
+  image: c82aben/mykafka
   hostname:   zoo2
 # host names of the other docker containers in the cluster and the ip of the box they run on.   
   extra_hosts:

@@ -12,6 +12,6 @@ RUN echo Europe/London > /etc/timezone && \
 # this will add AND UNPACK the kafka bundle... 
 ADD kafka_2.11-0.10.0.0.tgz /opt
 ENV KAFKA_HOME /opt/kafka_2.11-0.10.0.0 
-ADD startup_new.sh /startup_new.sh
-RUN chmod +x /startup_new.sh
-CMD ["/startup_new.sh"]
+ADD startup.sh /startup.sh
+RUN chmod +x /startup.sh
+CMD ["/startup.sh"]
