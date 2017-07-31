@@ -14,5 +14,5 @@ RUN echo Europe/London > /etc/timezone && \
 ADD kafka_2.11-0.10.0.0.tgz /opt
 ENV KAFKA_HOME /opt/kafka_2.11-0.10.0.0 
 ADD startup_new.sh /startup_new.sh
-chmod +x /startup_new.sh
+RUN chmod +x /startup_new.sh
 CMD ["/startup_new.sh"]
