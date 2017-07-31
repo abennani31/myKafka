@@ -1,0 +1,23 @@
+zookaf3:
+  build: .
+  # internal docker container hostname
+  hostname:   zoo3
+# host names of the other docker containers in the cluster and the ip of the box they run on.   
+  extra_hosts:
+    - "zoo1:192.168.99.100"
+    - "zoo2:192.168.99.100"
+  ports:      
+# public kafka port mapping to container    
+    - "9094:9094"
+# port used by zookeeper to maintain the ensemble (cluster)     
+    - "2890:2890"
+# port used by zookeeper to maintain the ensemble (cluster)     
+    - "3890:3890"
+  environment: 
+  # ID of the node in the cluster (idealy 1 to ... however many nodes you have )
+    NODE_ID: 3
+# list of zookeeper nodes with internal ensemble ports    
+    ZOOKEEPER_NODES: 192.168.99.100:2888:3888,192.168.99.100:2889:3889,192.168.99.100:2890:3890
+# list of kafka nodes with public kafka port    
+    KAFA_ADVERTISED_NODES: PLAINTEXT://192.168.99.100:9092,PLAINTEXT://192.168.99.100:9093,PLAINTEXT://192.168.99.100:9094
+    KAFKA_CONNECT: 192.168.99.100:2181,192.168.99.100:2182,192.168.99.100:2183
