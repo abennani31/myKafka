@@ -52,6 +52,7 @@ do
     #echo "server.$NODE_COUNT=$MY_IP:2888:3888" >> $KAFKA_HOME/config/zookeeper.properties
     echo "advertised.listeners=$KNODE" >> $KAFKA_HOME/config/server.properties
   else
+	echo "Pour les autres noeuds, c'est déjà réglé."
   fi  
 
 done
