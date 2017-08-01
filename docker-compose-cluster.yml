@@ -13,7 +13,6 @@ zookaf1:
     - "2888:2888"
 # port used by zookeeper to maintain the ensemble (cluster)     
     - "3888:3888"
-  dns: 10.153.224.13
   environment: 
   # ID of the node in the cluster (idealy 1 to ... however many nodes you have )
     NODE_ID: 1

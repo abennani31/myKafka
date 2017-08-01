@@ -46,11 +46,12 @@ do
   ((NODE_COUNT++))
 
   # add configuration based on Node ID
+      echo "server.$NODE_COUNT=$ZNODE" >> $KAFKA_HOME/config/zookeeper.properties
+
   if [ "$NODE_ID" == "$NODE_COUNT" ]; then
-    echo "server.$NODE_COUNT=$MY_IP:2888:3888" >> $KAFKA_HOME/config/zookeeper.properties
+    #echo "server.$NODE_COUNT=$MY_IP:2888:3888" >> $KAFKA_HOME/config/zookeeper.properties
     echo "advertised.listeners=$KNODE" >> $KAFKA_HOME/config/server.properties
   else
-    echo "server.$NODE_COUNT=$ZNODE" >> $KAFKA_HOME/config/zookeeper.properties
   fi  
 
 done
